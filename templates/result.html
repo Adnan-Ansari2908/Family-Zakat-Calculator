@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zakat Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial; padding: 30px; background:#f4f4f4; }
+        .box { background:white; padding:20px; border-radius:8px; }
+        .yes { color:green; }
+        .no { color:red; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>{{ family_name }} - Result</h2>
+
+    {% if eligible == "Yes" %}
+        <p class="yes"><b>Eligible for Zakat</b></p>
+    {% else %}
+        <p class="no"><b>Not Eligible for Zakat</b></p>
+    {% endif %}
+
+    <p>Total Wealth: ₹{{ total }}</p>
+    <p>Zakat (2.5%): ₹{{ zakat }}</p>
+
+</div>
+
+</body>
+</html>

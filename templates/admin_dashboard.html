@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial; padding: 30px; background:#f4f4f4; }
+        table { width:100%; border-collapse: collapse; background:white; }
+        th, td { padding:10px; border:1px solid #ddd; text-align:center; }
+        th { background:#2e7d32; color:white; }
+        input { padding:6px; }
+        button { padding:6px 10px; }
+    </style>
+</head>
+<body>
+
+<h2>Admin Dashboard</h2>
+
+<h3>Update Prices</h3>
+<form action="/update_prices" method="POST">
+    24K Gold Price (₹):
+    <input type="number" step="any" name="gold" value="{{ prices[0] }}" required>
+    Silver Price (₹):
+    <input type="number" step="any" name="silver" value="{{ prices[1] }}" required>
+    <button type="submit">Update</button>
+</form>
+
+<br><br>
+
+<table>
+<tr>
+    <th>Family</th>
+    <th>Total Wealth</th>
+    <th>Eligible</th>
+    <th>Zakat</th>
+    <th>Date</th>
+</tr>
+
+{% for f in families %}
+<tr>
+    <td>{{ f[1] }}</td>
+    <td>₹{{ f[9] }}</td>
+    <td>{{ f[11] }}</td>
+    <td>₹{{ f[10] }}</td>
+    <td>{{ f[12] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>

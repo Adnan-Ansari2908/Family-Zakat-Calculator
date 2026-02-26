@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zakat Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial; padding: 30px; background:#f4f4f4; }
+        .box { background:white; padding:20px; border-radius:8px; }
+        input, select, button { width:100%; padding:12px; margin-top:10px; }
+        button { background:#2e7d32; color:white; border:none; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>{{ family_name }} - Zakat Details</h2>
+
+    <form action="/submit" method="POST">
+        <input type="hidden" name="family_name" value="{{ family_name }}">
+
+        Gold (grams):
+        <input type="number" step="any" name="gold" required>
+
+        Gold Purity:
+        <select name="purity">
+            <option value="24K">24K</option>
+            <option value="22K">22K</option>
+            <option value="18K">18K</option>
+        </select>
+
+        Silver (grams):
+        <input type="number" step="any" name="silver" required>
+
+        Cash (₹):
+        <input type="number" step="any" name="cash" required>
+
+        Property Value (₹):
+        <input type="number" step="any" name="property" required>
+
+        Business Assets (₹):
+        <input type="number" step="any" name="business" required>
+
+        Debts (₹):
+        <input type="number" step="any" name="debts" required>
+
+        <button type="submit">Calculate Zakat</button>
+    </form>
+</div>
+
+</body>
+</html>
